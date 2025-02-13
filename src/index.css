@@ -1,3 +1,4 @@
+
 :root{
   --green: #3BE798;
   --greenHover: #1b6e48bd;
@@ -30,7 +31,7 @@ body, html {
   color: #ffffff;
 }
 
-/* Banner principal */
+/* General */
 .banner {
   width: 100%;
   height: 100vh;
@@ -38,6 +39,8 @@ body, html {
   overflow: hidden;
   position: relative;
 }
+
+/* Slider */
 .banner .slider {
   position: absolute;
   width: 200px;
@@ -69,6 +72,8 @@ body, html {
   height: 100%;
   object-fit: cover;
 }
+
+/* Content */
 .banner .content {
   position: absolute;
   bottom: 0;
@@ -109,6 +114,117 @@ body, html {
 .banner .content p {
   color: #ffffff;
 }
+
+/* Responsiveness */
+
+/* General adjustments for medium screens */
+@media (max-width: 1024px) {
+  .banner .slider {
+    display: none; /* Remove the slider */
+  }
+
+  .banner .content {
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  .banner .content h1 {
+    font-size: 10em; /* Adjust size */
+    line-height: 1.2em;
+  }
+
+  .banner .content h2 {
+    font-size: 2.5em;
+    margin-top: 10px;
+  }
+
+  .banner .content p {
+    font-size: 1em;
+  }
+
+  .banner .content .author {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+/* iPad-specific adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: auto; /* Adjust height to avoid cropping */
+  }
+
+  .banner .slider {
+    display: none; /* Ensure slider is hidden */
+  }
+
+  .banner .content {
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  .banner .content h1 {
+    font-size: 8em;
+    line-height: 1.2em;
+  }
+
+  .banner .content h2 {
+    font-size: 2em;
+  }
+
+  .banner .content p {
+    font-size: 1em;
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .banner .slider {
+    display: none; /* Hide completely */
+    animation: none; /* Disable animation */
+  }
+
+  .banner .content h1 {
+    font-size: 5em;
+  }
+
+  .banner .content h2 {
+    font-size: 2em;
+  }
+
+  .banner .content p {
+    font-size: 0.9em;
+  }
+
+  .banner .content {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .banner .content .author {
+    text-align: center;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .banner .slider {
+    display: none; /* Ensure slider is hidden */
+  }
+
+  .banner .content h1 {
+    font-size: 3em;
+  }
+
+  .banner .content h2 {
+    font-size: 1.5em;
+  }
+
+  .banner .content p {
+    font-size: 0.8em;
+  }
+}
+
 
 /* Catálogo de productos */
 .catalog {
@@ -230,41 +346,6 @@ body, html {
   transition: 0.5s;
 }
 
-.mores {
-  padding: 25px;
-  text-align: center;
-}
-
-.mores .price {
-  color: #eee;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-size: 1.2em;
-}
-
-/* Nuevo botón de compra */
-.buyButton {
-  display: block;
-  width: 100%;
-  max-width: 150px;
-  margin: 10px auto;
-  padding: 10px 20px;
-  background-color: var(--green);
-  color: #222;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: none;
-  outline: none;
-}
-
-.buyButton:hover {
-  background-color: var(--violet);
-  color: white;
-}
 
 /* Ajuste de imagen en hover */
 .card:hover .img img {
@@ -479,21 +560,7 @@ body, html {
 #searchInput::placeholder {
   color: #ccc;
 }
-/* Estilo del contenedor de búsqueda */
-.search-container {
-  text-align: center;
-  margin-top: 20px;
-}
 
-.search-bar {
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  width: 70%;
-  max-width: 500px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 /* Botón de filtros centrado debajo del buscador */
 .filter-button-container {
